@@ -1,0 +1,90 @@
+﻿@model Pie
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create New Pie</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<div asp-validation-summary="All"></div>
+
+
+
+			<label asp-for="CategoryId"></label>
+			<select asp-for="CategoryId"  class="form-control" >
+				<option disabled selected><vc:category-menue></vc:category-menue></option>
+				</select>
+			<span asp-validation-for="CategoryId" class="text-danger"></span>
+
+			<label asp-for="Name"></label>
+			<input asp-for="Name" class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="ShortDescription"></label>
+			<input asp-for="ShortDescription" class="form-control" />
+			<span asp-validation-for="ShortDescription" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="LongDescription"></label>
+			<input asp-for="LongDescription" class="form-control" />
+			<span asp-validation-for="LongDescription" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Price"></label>
+			<input asp-for="Price" class="form-control" />
+			<span asp-validation-for="Price" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="ImageUrl"></label>
+			<input asp-for="ImageUrl" class="form-control" />
+			<span asp-validation-for="ImageUrl" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="ImageThumbnailUrl"></label>
+			<input asp-for="ImageThumbnailUrl" class="form-control" />
+			<span asp-validation-for="ImageThumbnailUrl" class="text-danger"></span>
+		</div>
+
+
+		<div class="mb-3">
+			<label asp-for="IsPieOfTheWeek"></label>
+			<input asp-for="IsPieOfTheWeek" type="week" class="form-control" />
+			<span asp-validation-for="IsPieOfTheWeek" class="text-danger"></span>
+		</div>
+
+
+		<div class="mb-3">
+			<label asp-for="InStock"></label>
+			<input asp-for="InStock" type="week" class="form-control" />
+			<span asp-validation-for="InStock" class="text-danger"></span>
+		</div>
+
+
+		 
+
+
+		<div class="row">
+			<div class="col-6">
+				<button class="btn btn-primary rounded-2  form-control" type="submit">Create</button>
+			</div>  
+			<div class="col-6">
+				<a asp-controller="DashPie" asp-action="Index" class="btn btn-outline-secondary rounded-2 form-control
+">Back to List</a>
+
+			</div>
+
+		</div>
+
+	</div>
+</form>
+@section Scripts {
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
